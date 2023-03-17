@@ -17,4 +17,4 @@ A user-friendly web application that allows users to easily update their git con
 1. Open index.html in your preferred web browser.
 1. Enter your GitHub username, PAT, and current git config contents.
 1. Click the "Update git config" button to generate updated git config contents.
-1. Copy the updated git config contents and use them as needed
+1. Copy the updated git config contents and use them as needed 
