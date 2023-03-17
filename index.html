@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Config Updater</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <div class="container">
+        <h1>Git Config Updater</h1>
+
+        <label for="github-username">GitHub User Name:</label>
+        <input type="text" id="github-username">
+
+        <label for="pat-token">PAT Token:</label>
+        <input type="text" id="pat-token">
+
+        <label for="git-config">git config contents:</label>
+        <textarea id="git-config"></textarea>
+
+        <button id="update-config">Update git config</button>
+        <label for="updated-git-config">Updated git config contents:</label>
+        <textarea id="updated-git-config" readonly></textarea>
+    </div>
+    <script src="app.js"></script>
+</body>
