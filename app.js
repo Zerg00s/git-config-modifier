@@ -39,7 +39,53 @@ document.getElementById('update-config').addEventListener('click', function() {
     // Set input values
     document.getElementById('github-username').value = githubUsername;
     document.getElementById('pat-token').value = patToken;
+    enableDragAndDrop();
   }
+  
+
+  enableDragAndDrop = () => {
+    let dropZone = document.getElementById('container');
+    let gitConfig = document.getElementById('git-config');
+
+    dropZone.ondragover = function(event) {
+        event.preventDefault();
+        return false;
+    }
+
+    dropZone.ondrop = function(event) {
+        event.preventDefault();
+
+        let file = event.dataTransfer.files[0];
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+            gitConfig.value = e.target.result;
+        }
+
+        reader.readAsText(file);
+
+        return false;
+    }
+  }
+
+
   
   
   window.onload = load;
+
+
+  function downloadGitConfig() {
+    let updatedGitConfig = document.getElementById('updated-git-config');
+    let data = new Blob([updatedGitConfig.value], {type: 'text/plain'});
+    let url = window.URL.createObjectURL(data);
+
+    let link = document.createElement('a');
+    link.download = 'config';
+    link.href = url;
+    link.click();
+
+    // The timeout allows Firefox to see the link
+    setTimeout(function() {
+        window.URL.revokeObjectURL(url);  
+    }, 100);
+}

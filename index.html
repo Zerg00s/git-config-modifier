@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="style.css">
 
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div id="logo" title="View Source Code">
-            <a href="https://github.com/Zerg00s/git-config-modifier" target="_blank" >
+            <a href="https://github.com/Zerg00s/git-config-modifier" target="_blank">
                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"
                     width="50px">
             </a>
@@ -28,10 +28,12 @@
 
         <label for="git-config">Git Config Contents</label>
         <textarea id="git-config"></textarea>
+       
 
         <button id="update-config">Update git config</button>
         <label for="updated-git-config">Updated Git Config Contents</label>
         <textarea id="updated-git-config" readonly></textarea>
+        <button id="download-config" onclick="downloadGitConfig()">Download git config</button>
     </div>
 
     <script src="app.js"></script>
